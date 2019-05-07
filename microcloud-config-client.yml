@@ -14,15 +14,15 @@ spring:
 eureka:
  client:
   serviceUrl:
-    defaultZone: http://admin:admin@localhost:7301/eureka
+    defaultZone: http://admin:admin@localhost:7001/eureka
   register-with-eureka: false
 
 info:
   app.name: cloud-config-client-dev2
-  company.name: enjoy2
+  company.name: czz
 ---
 server:
-  port: 8102
+  port: 8082
 
 spring:
   profiles: beta
@@ -32,9 +32,9 @@ spring:
 eureka:
  client:
   serviceUrl:
-    defaultZone: http://admin:admin@localhost:7301/eureka
+    defaultZone: http://admin:admin@localhost:7001/eureka
   register-with-eureka: false
   
 info:
   app.name: cloud-config-client-beta2
-  company.name: enjoy
+  company.name: czz
