@@ -1,10 +1,10 @@
-spring:
+spring: # 这其实是产品服务的外部化配置
   profiles:
     active:
       - dev
 ---
 server:
- port: 8080
+ port: 8079
 mybatis:
  mapper-locations: # 所有的mapper映射文件
  - classpath:mapping/*.xml
@@ -12,11 +12,11 @@ spring:
  datasource:
    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
    driver-class-name: com.mysql.jdbc.Driver # 配置MySQL的驱动程序类
-   url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8 # 数据库连接地址
+   url: jdbc:mysql://47.104.77.246:3306/czz?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8 # 数据库连接地址
    username: root # 数据库用户名
-   password: root1234% # 数据库连接密码
+   password: 123456 # 数据库连接密码
  application:
-   name: microcloud-config-product-client
+   name: cloud-config-product-client
  profiles: dev
 
 logging:
@@ -26,16 +26,16 @@ logging:
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
-      defaultZone: http://admin:enjoy@localhost:7001/eureka
+      defaultZone: http://admin:admin@localhost:7001/eureka
   instance:
-    instance-id: microcloud-config-product-client
+    instance-id: cloud-config-product-client
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
     lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
 
 info:
-  app.name: microcloud-provider-product
-  company.name: enjoy
+  app.name: cloud-provider-product
+  company.name: czz
   build.artifactId: $project.artifactId$
   build.modelVersion: $project.modelVersion$
 
@@ -48,7 +48,7 @@ management:
         
 ---
 server:
- port: 8081
+ port: 8080
 mybatis:
  mapper-locations: # 所有的mapper映射文件
  - classpath:mapping/*.xml
@@ -56,11 +56,11 @@ spring:
  datasource:
    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
    driver-class-name: com.mysql.jdbc.Driver # 配置MySQL的驱动程序类
-   url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8 # 数据库连接地址
+   url: jdbc:mysql://47.104.77.246:3306/czz?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8 # 数据库连接地址
    username: root # 数据库用户名
-   password: root1234% # 数据库连接密码
+   password: 123456 # 数据库连接密码
  application:
-   name: microcloud-config-product-client
+   name: cloud-config-product-client
  profiles: beta
 
 logging:
@@ -70,16 +70,16 @@ logging:
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
-      defaultZone: http://admin:enjoy@localhost:7002/eureka
+      defaultZone: http://admin:admin@localhost:7002/eureka
   instance:
-    instance-id: microcloud-config-product-client
+    instance-id: cloud-config-product-client
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
     lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
 
 info:
-  app.name: microcloud-config-product-client
-  company.name: enjoy
+  app.name: cloud-config-product-client
+  company.name: czz
   build.artifactId: $project.artifactId$
   build.modelVersion: $project.modelVersion$
 
