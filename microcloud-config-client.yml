@@ -19,7 +19,7 @@ eureka:
 
 info:
   app.name: cloud-config-client-dev2
-  company.name: czz
+  company.name: czz1993s
 ---
 server:
   port: 8082
@@ -37,4 +37,4 @@ eureka:
   
 info:
   app.name: cloud-config-client-beta2
-  company.name: czz
+  company.name: czz1993s
