@@ -18,8 +18,8 @@ eureka:
   register-with-eureka: false
 
 info:
-  app.name: cloud-config-client-dev21994
-  company.name: czz1994
+  app.name: cloud-config-client-dev2
+  company.name: czz
 ---
 server:
   port: 8082
@@ -36,5 +36,5 @@ eureka:
   register-with-eureka: false
   
 info:
-  app.name: cloud-config-client-beta21994
-  company.name: czz1994
+  app.name: cloud-config-client-beta2
+  company.name: czz
